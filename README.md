@@ -41,4 +41,4 @@ buildConfigField 'String', "ApiKey", Catalogue_Movie_ApiKey
 
 * **R Rifa Fauzi Komara**
 
-Jangan lupa untuk follow dan ★ ya :)
+Jangan lupa untuk follow dan ★
