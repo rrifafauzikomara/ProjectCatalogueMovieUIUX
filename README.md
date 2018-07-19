@@ -28,7 +28,7 @@ Untuk menjalankan source code aplikasi ini, anda perlu registrasi API KEY dari w
 kemudian memasukkan API KEY yang telah didapat ke dalam file ***gradle.properties***
 
 ```
-MovieDbApiKey="Paste API KEY anda disini"
+MovieDbApiKey="Masukan API KEY anda disini"
 ```
 
 Kemudian tambah baris berikut pada file ***build.gradle*** dibawah ***buildTypes***
