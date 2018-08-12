@@ -195,15 +195,15 @@ public class MainActivity extends AppCompatActivity
         } else if (id == R.id.top_rated) {
             Intent top = new Intent(getApplicationContext(), TopRatedActivity.class);
             startActivity(top);
-            Toast.makeText(getApplicationContext(), "Show Top Rated Movies", Toast.LENGTH_SHORT);
+            Toast.makeText(getApplicationContext(), "Show Top Rated Movies", Toast.LENGTH_SHORT).show();
         } else if (id == R.id.now_playing) {
             Intent now = new Intent(getApplicationContext(), NowPlayingActivity.class);
             startActivity(now);
-            Toast.makeText(getApplicationContext(), "Show Now Playing Movies", Toast.LENGTH_SHORT);
+            Toast.makeText(getApplicationContext(), "Show Now Playing Movies", Toast.LENGTH_SHORT).show();
         } else if (id == R.id.upcoming) {
             Intent up = new Intent(getApplicationContext(), UpComingActivity.class);
             startActivity(up);
-            Toast.makeText(getApplicationContext(), "Show Up Coming Movies", Toast.LENGTH_SHORT);
+            Toast.makeText(getApplicationContext(), "Show Up Coming Movies", Toast.LENGTH_SHORT).show();
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
