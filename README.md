@@ -1,6 +1,5 @@
 # ProjectCatalogueMovieUIUX
-Aplikasi katalog movie untuk submission kedua beasiswa MADE (Menjadi Android Developer Expert) dari Dicoding https://www.dicoding.com/academies/14/ . Thanks to Google yang telah memberikan beasiswa
-untuk dapat mengikuti kelas ini.
+Aplikasi katalog movie untuk submission kedua beasiswa MADE (Menjadi Android Developer Expert) dari Dicoding https://www.dicoding.com/academies/14/.
 
 ## Screenshots
 
