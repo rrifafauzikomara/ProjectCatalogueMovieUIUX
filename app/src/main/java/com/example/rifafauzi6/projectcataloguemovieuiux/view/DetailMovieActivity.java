@@ -1,4 +1,4 @@
-package com.example.rifafauzi6.projectcataloguemovieuiux;
+package com.example.rifafauzi6.projectcataloguemovieuiux.view;
 
 import android.content.Intent;
 import android.support.design.widget.CoordinatorLayout;
@@ -12,6 +12,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.example.rifafauzi6.projectcataloguemovieuiux.R;
 
 public class DetailMovieActivity extends AppCompatActivity {
 

@@ -1,6 +1,6 @@
-package com.example.rifafauzi6.projectcataloguemovieuiux.API;
+package com.example.rifafauzi6.projectcataloguemovieuiux.api;
 
-import com.example.rifafauzi6.projectcataloguemovieuiux.Entity.ResponseMovies;
+import com.example.rifafauzi6.projectcataloguemovieuiux.model.ResponseMovies;
 
 import retrofit2.Call;
 import retrofit2.http.GET;

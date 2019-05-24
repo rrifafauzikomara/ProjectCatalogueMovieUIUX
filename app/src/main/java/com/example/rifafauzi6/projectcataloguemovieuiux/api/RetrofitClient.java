@@ -1,4 +1,4 @@
-package com.example.rifafauzi6.projectcataloguemovieuiux.API;
+package com.example.rifafauzi6.projectcataloguemovieuiux.api;
 
 import okhttp3.OkHttpClient;
 import okhttp3.logging.HttpLoggingInterceptor;

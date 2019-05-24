@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:id="@+id/coordinatorLayout"
     android:layout_height="match_parent"
-    tools:context="com.example.rifafauzi6.projectcataloguemovieuiux.DetailMovieActivity">
+    tools:context="com.example.rifafauzi6.projectcataloguemovieuiux.view.DetailMovieActivity">
 
     <android.support.design.widget.AppBarLayout
         android:id="@+id/app_bar_layout"
@@ -27,6 +27,7 @@
                 android:src="@drawable/img_default_bg"
                 android:contentDescription="@string/app_name"
                 android:scaleType="centerCrop"
+                android:transitionName="imagetransition"
                 android:layout_width="match_parent"
                 android:layout_height="500dp" />
 

@@ -11,21 +11,21 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name=".view.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".DetailMovieActivity" />
-        <activity android:name=".Category.MostPopularActivity"
+        <activity android:name=".view.DetailMovieActivity" />
+        <activity android:name=".view.category.MostPopularActivity"
             android:label="Most Popular Movies"/>
-        <activity android:name=".Category.TopRatedActivity"
+        <activity android:name=".view.category.TopRatedActivity"
             android:label="Top Rated Movies"/>
-        <activity android:name=".Category.NowPlayingActivity"
+        <activity android:name=".view.category.NowPlayingActivity"
             android:label="Now Playing Movies"/>
-        <activity android:name=".Category.UpComingActivity"
+        <activity android:name=".view.category.UpComingActivity"
             android:label="Up Coming Movies"/>
     </application>
 

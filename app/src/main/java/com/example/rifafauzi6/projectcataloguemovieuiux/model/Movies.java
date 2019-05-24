@@ -1,4 +1,4 @@
-package com.example.rifafauzi6.projectcataloguemovieuiux.Entity;
+package com.example.rifafauzi6.projectcataloguemovieuiux.model;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;

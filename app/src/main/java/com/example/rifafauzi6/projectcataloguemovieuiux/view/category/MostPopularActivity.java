@@ -1,23 +1,30 @@
-package com.example.rifafauzi6.projectcataloguemovieuiux.Category;
+package com.example.rifafauzi6.projectcataloguemovieuiux.view.category;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.os.Parcelable;
+import android.support.v4.app.ActivityOptionsCompat;
+import android.support.v4.view.ViewCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.widget.ImageView;
 import android.widget.Toast;
 
-import com.example.rifafauzi6.projectcataloguemovieuiux.API.BaseApiService;
-import com.example.rifafauzi6.projectcataloguemovieuiux.API.Server;
-import com.example.rifafauzi6.projectcataloguemovieuiux.Adapter.MovieAdapter;
+import com.example.rifafauzi6.projectcataloguemovieuiux.api.BaseApiService;
+import com.example.rifafauzi6.projectcataloguemovieuiux.api.Server;
+import com.example.rifafauzi6.projectcataloguemovieuiux.adapter.MovieAdapter;
 import com.example.rifafauzi6.projectcataloguemovieuiux.BuildConfig;
-import com.example.rifafauzi6.projectcataloguemovieuiux.Entity.Movies;
-import com.example.rifafauzi6.projectcataloguemovieuiux.Entity.ResponseMovies;
-import com.example.rifafauzi6.projectcataloguemovieuiux.MainActivity;
+import com.example.rifafauzi6.projectcataloguemovieuiux.model.Movies;
+import com.example.rifafauzi6.projectcataloguemovieuiux.MovieItemClickListener;
+import com.example.rifafauzi6.projectcataloguemovieuiux.model.ResponseMovies;
+import com.example.rifafauzi6.projectcataloguemovieuiux.view.DetailMovieActivity;
+import com.example.rifafauzi6.projectcataloguemovieuiux.view.MainActivity;
 import com.example.rifafauzi6.projectcataloguemovieuiux.R;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -39,6 +46,9 @@ public class MostPopularActivity extends AppCompatActivity {
     private final String include_adult = "false";
     private final String include_video = "false";
     private final String page = "1";
+
+//    public static final String KEY_TEAM_DETAIL = "team_detail";
+//    public static final String KEY_TEAM_DETAIL_TRANSITION_NAME = "strTeamBadge";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -103,4 +113,15 @@ public class MostPopularActivity extends AppCompatActivity {
         });
     }
 
+//    @Override
+//    public void onMovieItemClick(Movies moviesItem, ImageView shareImageView) {
+//        Intent intent = new Intent(this, DetailMovieActivity.class);
+//        intent.putExtra(KEY_TEAM_DETAIL, (Serializable) moviesItem);
+//        intent.putExtra(KEY_TEAM_DETAIL_TRANSITION_NAME, ViewCompat.getTransitionName(shareImageView));
+//
+//        ActivityOptionsCompat options =
+//                ActivityOptionsCompat.makeSceneTransitionAnimation(this, shareImageView, ViewCompat.getTransitionName(shareImageView));
+//
+//        startActivity(intent, options.toBundle());
+//    }
 }

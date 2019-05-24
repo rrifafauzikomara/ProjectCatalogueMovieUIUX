@@ -1,10 +1,11 @@
-package com.example.rifafauzi6.projectcataloguemovieuiux;
+package com.example.rifafauzi6.projectcataloguemovieuiux.view;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
-import android.provider.Settings;
+import android.support.v4.app.ActivityOptionsCompat;
 import android.support.v4.view.MenuItemCompat;
+import android.support.v4.view.ViewCompat;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.text.TextUtils;
@@ -16,19 +17,24 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ImageView;
 import android.widget.SearchView;
 import android.widget.Toast;
 
-import com.example.rifafauzi6.projectcataloguemovieuiux.API.BaseApiService;
-import com.example.rifafauzi6.projectcataloguemovieuiux.API.Server;
-import com.example.rifafauzi6.projectcataloguemovieuiux.Adapter.MovieAdapter;
-import com.example.rifafauzi6.projectcataloguemovieuiux.Category.MostPopularActivity;
-import com.example.rifafauzi6.projectcataloguemovieuiux.Category.NowPlayingActivity;
-import com.example.rifafauzi6.projectcataloguemovieuiux.Category.TopRatedActivity;
-import com.example.rifafauzi6.projectcataloguemovieuiux.Category.UpComingActivity;
-import com.example.rifafauzi6.projectcataloguemovieuiux.Entity.Movies;
-import com.example.rifafauzi6.projectcataloguemovieuiux.Entity.ResponseMovies;
+import com.example.rifafauzi6.projectcataloguemovieuiux.BuildConfig;
+import com.example.rifafauzi6.projectcataloguemovieuiux.MovieItemClickListener;
+import com.example.rifafauzi6.projectcataloguemovieuiux.R;
+import com.example.rifafauzi6.projectcataloguemovieuiux.api.BaseApiService;
+import com.example.rifafauzi6.projectcataloguemovieuiux.api.Server;
+import com.example.rifafauzi6.projectcataloguemovieuiux.adapter.MovieAdapter;
+import com.example.rifafauzi6.projectcataloguemovieuiux.view.category.MostPopularActivity;
+import com.example.rifafauzi6.projectcataloguemovieuiux.view.category.NowPlayingActivity;
+import com.example.rifafauzi6.projectcataloguemovieuiux.view.category.TopRatedActivity;
+import com.example.rifafauzi6.projectcataloguemovieuiux.view.category.UpComingActivity;
+import com.example.rifafauzi6.projectcataloguemovieuiux.model.Movies;
+import com.example.rifafauzi6.projectcataloguemovieuiux.model.ResponseMovies;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import retrofit2.Call;
@@ -39,7 +45,7 @@ public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     RecyclerView rvMovies;
-    private MovieAdapter adapter;
+    MovieAdapter adapter;
     List<Movies> listMovies = new ArrayList<>();
     ProgressDialog loading;
     BaseApiService apiService;
@@ -51,6 +57,9 @@ public class MainActivity extends AppCompatActivity
     private final String include_video = "false";
     private final String page = "1";
 
+//    public static final String KEY_TEAM_DETAIL = "team_detail";
+//    public static final String KEY_TEAM_DETAIL_TRANSITION_NAME = "strTeamBadge";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -59,11 +68,8 @@ public class MainActivity extends AppCompatActivity
         setSupportActionBar(toolbar);
 
         rvMovies = findViewById(R.id.rv_movies);
-
         apiService = Server.getAPIService();
-
-        adapter = new MovieAdapter(getApplicationContext(), listMovies);
-
+        adapter = new MovieAdapter(this, listMovies);
         rvMovies.setHasFixedSize(true);
         rvMovies.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
         rvMovies.setAdapter(adapter);
@@ -210,4 +216,16 @@ public class MainActivity extends AppCompatActivity
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
+
+//    @Override
+//    public void onMovieItemClick(Movies moviesItem, ImageView shareImageView) {
+//        Intent intent = new Intent(this, DetailMovieActivity.class);
+//        intent.putExtra(KEY_TEAM_DETAIL, (Serializable) moviesItem);
+//        intent.putExtra(KEY_TEAM_DETAIL_TRANSITION_NAME, ViewCompat.getTransitionName(shareImageView));
+//
+//        ActivityOptionsCompat options =
+//                ActivityOptionsCompat.makeSceneTransitionAnimation(this, shareImageView, ViewCompat.getTransitionName(shareImageView));
+//
+//        startActivity(intent, options.toBundle());
+//    }
 }

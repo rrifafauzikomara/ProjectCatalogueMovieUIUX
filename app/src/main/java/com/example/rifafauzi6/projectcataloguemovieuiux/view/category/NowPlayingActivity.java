@@ -1,23 +1,29 @@
-package com.example.rifafauzi6.projectcataloguemovieuiux.Category;
+package com.example.rifafauzi6.projectcataloguemovieuiux.view.category;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.support.v4.app.ActivityOptionsCompat;
+import android.support.v4.view.ViewCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.widget.ImageView;
 import android.widget.Toast;
 
-import com.example.rifafauzi6.projectcataloguemovieuiux.API.BaseApiService;
-import com.example.rifafauzi6.projectcataloguemovieuiux.API.Server;
-import com.example.rifafauzi6.projectcataloguemovieuiux.Adapter.MovieAdapter;
+import com.example.rifafauzi6.projectcataloguemovieuiux.MovieItemClickListener;
+import com.example.rifafauzi6.projectcataloguemovieuiux.api.BaseApiService;
+import com.example.rifafauzi6.projectcataloguemovieuiux.api.Server;
+import com.example.rifafauzi6.projectcataloguemovieuiux.adapter.MovieAdapter;
 import com.example.rifafauzi6.projectcataloguemovieuiux.BuildConfig;
-import com.example.rifafauzi6.projectcataloguemovieuiux.Entity.Movies;
-import com.example.rifafauzi6.projectcataloguemovieuiux.Entity.ResponseMovies;
-import com.example.rifafauzi6.projectcataloguemovieuiux.MainActivity;
+import com.example.rifafauzi6.projectcataloguemovieuiux.model.Movies;
+import com.example.rifafauzi6.projectcataloguemovieuiux.model.ResponseMovies;
+import com.example.rifafauzi6.projectcataloguemovieuiux.view.DetailMovieActivity;
+import com.example.rifafauzi6.projectcataloguemovieuiux.view.MainActivity;
 import com.example.rifafauzi6.projectcataloguemovieuiux.R;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -25,7 +31,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class TopRatedActivity extends AppCompatActivity {
+public class NowPlayingActivity extends AppCompatActivity  {
 
     RecyclerView rvMovies;
     private MovieAdapter adapter;
@@ -36,10 +42,13 @@ public class TopRatedActivity extends AppCompatActivity {
     private final String api_key = BuildConfig.MOVIE_DB_API_KEY;
     private final String language = "en-US";
 
+//    public static final String KEY_TEAM_DETAIL = "team_detail";
+//    public static final String KEY_TEAM_DETAIL_TRANSITION_NAME = "strTeamBadge";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_top_rated);
+        setContentView(R.layout.activity_now_playing);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -60,6 +69,18 @@ public class TopRatedActivity extends AppCompatActivity {
 
     }
 
+//    @Override
+//    public void onMovieItemClick(Movies moviesItem, ImageView shareImageView) {
+//        Intent intent = new Intent(this, DetailMovieActivity.class);
+//        intent.putExtra(KEY_TEAM_DETAIL, (Serializable) moviesItem);
+//        intent.putExtra(KEY_TEAM_DETAIL_TRANSITION_NAME, ViewCompat.getTransitionName(shareImageView));
+//
+//        ActivityOptionsCompat options =
+//                ActivityOptionsCompat.makeSceneTransitionAnimation(this, shareImageView, ViewCompat.getTransitionName(shareImageView));
+//
+//        startActivity(intent, options.toBundle());
+//    }
+
     @Override
     public boolean onSupportNavigateUp() {
         Intent intent = new Intent(getApplicationContext(), MainActivity.class);
@@ -75,7 +96,7 @@ public class TopRatedActivity extends AppCompatActivity {
 
     private void refresh(){
         loading = ProgressDialog.show(this, null, "Please wait...", true, false);
-        apiService.getTopRatedMovies(api_key, language).enqueue(new Callback<ResponseMovies>() {
+        apiService.getNowPlayingMovie(api_key, language).enqueue(new Callback<ResponseMovies>() {
             @Override
             public void onResponse(Call<ResponseMovies> call, Response<ResponseMovies> response) {
                 if (response.isSuccessful()){

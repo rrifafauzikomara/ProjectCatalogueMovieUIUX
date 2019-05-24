@@ -27,6 +27,7 @@
                 android:layout_height="160dp"
                 android:scaleType="centerCrop"
                 android:id="@+id/movie_poster"
+                android:transitionName="imagetransition"
                 android:layout_marginBottom="4dp"/>
             <View
                 android:id="@+id/view"
