@@ -2,28 +2,25 @@ package com.example.rifafauzi6.projectcataloguemovieuiux.view.category;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
-import android.support.v4.app.ActivityOptionsCompat;
-import android.support.v4.view.ViewCompat;
-import android.support.v7.app.AppCompatActivity;
+import androidx.core.app.ActivityOptionsCompat;
+import androidx.core.view.ViewCompat;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.Toolbar;
-import android.widget.ImageView;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+import androidx.appcompat.widget.Toolbar;
+
 import android.widget.Toast;
 
-import com.example.rifafauzi6.projectcataloguemovieuiux.MovieItemClickListener;
 import com.example.rifafauzi6.projectcataloguemovieuiux.api.BaseApiService;
 import com.example.rifafauzi6.projectcataloguemovieuiux.api.Server;
 import com.example.rifafauzi6.projectcataloguemovieuiux.adapter.MovieAdapter;
 import com.example.rifafauzi6.projectcataloguemovieuiux.BuildConfig;
 import com.example.rifafauzi6.projectcataloguemovieuiux.model.Movies;
 import com.example.rifafauzi6.projectcataloguemovieuiux.model.ResponseMovies;
-import com.example.rifafauzi6.projectcataloguemovieuiux.view.DetailMovieActivity;
 import com.example.rifafauzi6.projectcataloguemovieuiux.view.MainActivity;
 import com.example.rifafauzi6.projectcataloguemovieuiux.R;
 
-import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
